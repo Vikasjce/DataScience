@@ -1,1 +1,7 @@
-R commands for Data Processing
+R commands
+##Create a data frame 
+first_name <- c("Vikas","Vijay","Gaurav")
+last_name <- c("kamath","thota","wadnerkar")
+age <- c(32,33,33)
+employee <- data.frame(first_name,last_name,age)
+
