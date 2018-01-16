@@ -1,7 +1,18 @@
 R commands
-##Create a data frame 
+
+##Create a data frame from variable vectors
 first_name <- c("Vikas","Vijay","Gaurav")
 last_name <- c("kamath","thota","wadnerkar")
 age <- c(32,33,33)
 employee <- data.frame(first_name,last_name,age)
 
+#basic Functions to check the dataframe
+trees # Dataframe that is created
+?trees # gives information of the dataset if already there 
+head(trees) # First 6 columns 
+nrow(trees) # Number of rows in the dataset
+ncol(trees) #Number of Columns in the dataset
+names(trees) # Names of the columns in the dataset
+dim(trees) # gives the dimension of the dataset number of rows and columns
+summary(trees) # gives the statistics of the data column by column mean,median,mode quartile etc
+str(trees) #gives the columns and their datatypes
