@@ -24,3 +24,11 @@ str(AirPassengers)
 str(trees)
 str(airquality)
 
+# read file from a URL into R
+cd = read.csv("https://chronicdata.cdc.gov/api/views/g4ie-h725/rows.csv?accessType=DOWNLOAD") # read a CSV from a URL 
+str(airquality) # Structure of the data
+summary(airquality) # Summary on the columns will tell count for Label coulmns and Stats for Continuous data 
+head(airquality) # Gives the firt 6 columns  
+summary(airquality$Temp) # Summary for a specific temperature
+airquality$TempdegreeC <- (airquality$Temp - 32 ) * (5/9) # Convetrting and adding new column for Temperature in degree centigrade 
+summary(airquality$TempdegreeC) # Summary of degree Centigrade newly created column
