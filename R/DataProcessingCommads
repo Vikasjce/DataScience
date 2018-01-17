@@ -45,7 +45,7 @@ jd$results$formatted_address
 jd$results$address_components
 jd$results$address_components[[1]].$
 
-# for each try again
+# foreach (try again)
 
 
 
