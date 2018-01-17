@@ -16,3 +16,11 @@ names(trees) # Names of the columns in the dataset
 dim(trees) # gives the dimension of the dataset number of rows and columns
 summary(trees) # gives the statistics of the data column by column mean,median,mode quartile etc
 str(trees) #gives the columns and their datatypes
+
+# Str function in R is the first thing to do to understand the dataset and their columns
+?str # help command 
+data() # Internal Data sets in R
+str(AirPassengers)
+str(trees)
+str(airquality)
+
