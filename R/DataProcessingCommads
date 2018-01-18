@@ -47,6 +47,19 @@ jd$results$address_components[[1]].$
 
 # foreach (try again)
 
+# Reshape (try again)
+
+# Merge 2 dataframes on a like column
+emp <- data.frame(name=c("John","Joe"),ID=c(1,2), stringsAsFactors = FALSE) # Create a data frame of 2 columns and 2 rows 
+cnt <- data.frame(ID=c(1,2),country=c("USA","UK"),stringsAsFactors = FALSE) # Create a data frame of 2 columns and 2 rows 
+str(emp) # function to check the data
+str(cnt) # function to check the data
+nrow(emp) 
+ncol(emp)
+mrg <- merge(emp,cnt,by="ID")
+mrg
+
+
 
 
 
