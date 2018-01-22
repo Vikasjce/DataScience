@@ -45,9 +45,9 @@ jd$results$formatted_address
 jd$results$address_components
 jd$results$address_components[[1]].$
 
-# foreach (try again)
+# foreach (Understand again)
 
-# Reshape (try again)
+# Reshape (Understand again)
 
 # Merge 2 dataframes on a like column
 emp <- data.frame(name=c("John","Joe"),ID=c(1,2), stringsAsFactors = FALSE) # Create a data frame of 2 columns and 2 rows 
@@ -74,6 +74,10 @@ mtcars # Mt cars is the list of the data
 ag <- aggregate(mtcars$mpg,list(mtcars$cyl),median) # Agrregate the mpg group by Cyl and run the median function as the aggregator function
 ag
 
+# Imputation - Understand again
+
+# Linear fitted imputation -- Understand again
+install.packages("Hmisc")
 
 
 
