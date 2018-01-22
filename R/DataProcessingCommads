@@ -59,7 +59,20 @@ ncol(emp)
 mrg <- merge(emp,cnt,by="ID")
 mrg
 
+# Transposing data
+carmpg <- mtcars[order(-mtcars$mpg),] # Order the car with the best gas mileage at the top
+head(carmpg) # Selects only the first 6 rows
+carmpg <- carmpg[1:10,c(1,2,4,6)]  # Selects the first 10 rows and only columns required
+carmpg
+carmpg <- data.frame(t(carmpg)) # Transpose the data
+carmpg[1,] # Selects the first row only 
+carmpg$Toyota.Corolla
 
+# Aggregate the data 
+?aggregate
+mtcars # Mt cars is the list of the data
+ag <- aggregate(mtcars$mpg,list(mtcars$cyl),median) # Agrregate the mpg group by Cyl and run the median function as the aggregator function
+ag
 
 
 
