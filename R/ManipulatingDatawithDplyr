@@ -1,1 +1,46 @@
 
+# Manipulating data with dplyr package 
+mydf <- read.csv(path2csv,stringsAsFactors = FALSE) # reads the data with strings as factors
+dim(mydf) # Gives the number of rows and columns
+head(mydf)
+library(dplyr)
+packageVersion("dplyr") # Checks the package version
+cran <- tbl_df(mydf) # Create a table dataframe of dplyr package
+rm("mydf") # Removes the older dataframe 
+cran # Table dataframe shows a comprehensive wat of showing the data than the 
+
+# Using the select function of dplyr
+?select
+select(cran, ip_id, package, country)
+5:20
+select(cran, r_arch:country) #select multiple columns using :
+select(cran, country:r_arch) # Reverse order
+cran
+select(cran,-time) # remove a column
+-5:20
+x<--(5:20)
+select(cran,-(x:size)) # did not get what is this
+
+# Using the Filter finction of dplyr
+filter(cran,package=="swirl") # Filter the rows where the package is swirl
+filter(cran,r_version=="3.1.1",country=="US") #comma separated for multiple conditions works as and 
+?Comparison
+filter(cran,country=="IN",r_version <= "3.0.2")
+filter(cran, country=="IN" | country=="US")
+filter(cran,size > 100500, r_os == "linux-gnu")
+filter(cran, !is.na(r_version))
+
+# USing arrange function of dplyr
+cran2 <- select(cran,size:ip_id)
+arrange(cran2,ip_id) # arranges column ip_id in ascending order
+arrange(cran2,desc(ip_id)) #arranges column in descending order
+arrange(cran2,package,ip_id) #arrange using 2 columns 
+arrange(cran2, country, desc(r_version), ip_id)
+
+# Using mutate function of dplyr
+cran3 <- select(cran,ip_id,package,size) 
+cran3
+mutate(cran3,size_mb =size/2^20) # Mutate will add 1 more column to the output
+cran3
+mutate(cran3,size_mb=size/2^20,size_gb=size_mb/2^10) # we can use the existed calculted column to fetch data 
+mutate(cran3,correct_size=size+1000)
