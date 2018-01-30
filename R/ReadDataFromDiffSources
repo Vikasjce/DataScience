@@ -16,5 +16,10 @@ cameras <- read.csv("./Data/cameras.csv") # Automatically sets delimeter as , an
 head(cameras)
 
 ?read.table
+quote- Is there a quote in the values 
+nrows- number of rows to be selected
+na.strings - set the character that represents the missing value
+skip - number of lines to skip before starting to read 
+
 
 
