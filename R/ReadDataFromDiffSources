@@ -15,5 +15,6 @@ head(cameras)
 cameras <- read.csv("./Data/cameras.csv") # Automatically sets delimeter as , and Header TRUE 
 head(cameras)
 
+?read.table
 
 
