@@ -21,5 +21,25 @@ nrows- number of rows to be selected
 na.strings - set the character that represents the missing value
 skip - number of lines to skip before starting to read 
 
+# Using the data to copy from Internet
+if(!file.exists("./Data")){dir.create("./Data")}
+file_url <- "https://data.baltimorecity.gov/api/views/aqgr-xx9h/rows.csv?accessType=DOWNLOAD"
+download.file(file_url,destfile = "./Data/cameras.xlsx", method="curl")
+dateDownloaded <- date()
+list.files("./Data")
+
+# Read the data from xlsx check also XLConnect vignette to check more on XL connect 
+install.packages("xlsx")
+library(xlsx)
+cameras <- read.xlsx("./Data/cameras.xlsx", sheetIndex = 1,header = TRUE)
+head(cameras)
+
+# Read the data from XML
+install.packages("XML")
+library(XML)
+file_url <-  "https://www.w3schools.com/xml/simple.xml"
+doc <-  xmlTreeParse(file_url,useInternal = TRUE)
+rootNode <- xmlRoot(doc)
+xmlName(rootNode)
 
 
