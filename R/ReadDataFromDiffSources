@@ -38,8 +38,16 @@ head(cameras)
 install.packages("XML")
 library(XML)
 file_url <-  "https://www.w3schools.com/xml/simple.xml"
-doc <-  xmlTreeParse(file_url,useInternal = TRUE)
-rootNode <- xmlRoot(doc)
-xmlName(rootNode)
+doc <-  xmlTreeParse(file_url,useInternal = TRUE) # Parses the XML tree into Doc
+rootNode <- xmlRoot(doc)  # Finds the root node of the doc
+xmlName(rootNode) # Tells what is the name of the root node
+names(rootNode) # Tells all the subnodes and their names 
+rootNode[[1]] # Access the First element 
+rootNode[[1]][[1]] # Access the element 1 level lower
+xmlSApply(rootNode,xmlValue) #Parses all the Values of the nodes
+xpathSApply(rootNode,"//name",xmlValue)
+xpathSApply(rootNode,"//price",xmlValue)
+-- update the Baltimore data 
+
 
 
