@@ -1,1 +1,5 @@
+# Download Files from a link
+file_url <- "https://data.baltimorecity.gov/api/views/aqgr-xx9h/rows.csv?accessType=DOWNLOAD" # Url of the file in a variable 
+download.file(file_url,destfile = "./Data/cameras.csv", method="curl") # Download Command to create a file in the local 
+list.files("./Data") # Check the file in the local 
 
