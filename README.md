@@ -1,4 +1,4 @@
-# Data Science and Machine Learning Pre Requisites
+# Data Science & Machine Learning Pre-Requisites
 
 ## Statistics
 Contains the Required Learnings for Statistics.
