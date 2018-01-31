@@ -64,4 +64,6 @@ cat(myjson)
 iris2 <- fromJSON(myjson) 
 head(iris2)
 
+# Get Data from Mysql or databases 
+-- Do this at home 
 
