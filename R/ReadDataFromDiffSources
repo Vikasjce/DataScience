@@ -49,5 +49,19 @@ xpathSApply(rootNode,"//name",xmlValue)
 xpathSApply(rootNode,"//price",xmlValue)
 -- update the Baltimore data 
 
+# Get Data from JSON 
+library(jsonlite)
+jsonData <- fromJSON("https://api.github.com/users/jtleek/repos")
+names(jsonData)
+names(jsonData$owner)
+jsonData$owner$login
+
+# Convert to DataFrane to Json 
+myjson <- toJSON(iris,pretty = TRUE)
+cat(myjson)
+
+# Convert Json to DataFrame
+iris2 <- fromJSON(myjson) 
+head(iris2)
 
 
