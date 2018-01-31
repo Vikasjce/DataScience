@@ -1,1 +1,1 @@
-# My Learnings
+# Data Science and Machine Learning Pre Requisites
