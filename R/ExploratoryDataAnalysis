@@ -29,3 +29,6 @@ barplot(reg,col = "wheat",main = "Number of Counties in Each Region")
 
 # Multiple plots 
 boxplot(pm25 ~ region, data = pollution, col = "red")
+par(mfrow=c(2,1),mar=c(4,4,2,1))
+east <- subset(pollution,region == "east")
+head(east)
