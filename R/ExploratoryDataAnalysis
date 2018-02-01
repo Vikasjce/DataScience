@@ -25,3 +25,7 @@ abline(v = median(ppm), col = "magenta", lwd = 4)
 names(pollution)
 reg <- table(pollution$region) # gives the count of each value in the column
 reg
+barplot(reg,col = "wheat",main = "Number of Counties in Each Region")
+
+# Multiple plots 
+boxplot(pm25 ~ region, data = pollution, col = "red")
