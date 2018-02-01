@@ -1,1 +1,26 @@
+head(pollution)
+dim(pollution)
+library(dplyr)
+filter(pollution,pm25>12)
+summary(pollution$pm25)
+ppm <- pollution$pm25
+quantile(ppm)
 
+# Boxplot 
+boxplot(ppm,col = "blue") # Creates a boxplot 
+abline(h=12) # Adds an abline horizontally in the graph at the point 12
+
+# Histogram
+hist(ppm,col = "green")
+rug(ppm)
+low
+high
+hist(ppm,col = "green",breaks = 100)
+rug(ppm)
+hist(ppm,col = "green")
+abline(v=12,lwd=3)
+abline(v = median(ppm), col = "magenta", lwd = 4) 
+
+names(pollution)
+reg <- table(pollution$region) # gives the count of each value in the column
+reg
