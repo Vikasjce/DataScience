@@ -46,4 +46,14 @@ west <- subset(pollution,region == "west")
 plot(west$latitude,west$pm25,main =  "West")
 plot(east$latitude,east$pm25,main =  "East")
 
+# Graphical Devices in R 
+with(faithful,plot(eruptions,waiting)) # Plot the data using scatter plot
+title(main = "Old Faithful Geyser data") # Title can be added later to the graph like this 
+dev.cur() # Gives the device where the graph is getting plotted
+pdf(file = "myplot.pdf")
+with(faithful,plot(eruptions,waiting))
+title(main = "Old Faithful Geyser data")
+dev.off()
+dev.copy(png,file = "geyserplot.png")
+dev.off()
 
