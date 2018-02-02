@@ -28,7 +28,22 @@ reg
 barplot(reg,col = "wheat",main = "Number of Counties in Each Region")
 
 # Multiple plots 
-boxplot(pm25 ~ region, data = pollution, col = "red")
-par(mfrow=c(2,1),mar=c(4,4,2,1))
+boxplot(pm25 ~ region, data = pollution, col = "red") # Creates a box plot for groups of 2 Categorical variables
+par(mfrow=c(2,1),mar=c(4,4,2,1))  # Creates 2 rows and 1 column partition and graphs are overlayed 
 east <- subset(pollution,region == "east")
 head(east)
+hist(east$pm25,col = 'green')
+hist(subset(pollution,region=="west")$pm25, col = "green")
+
+# Scatter plots 
+plot(pollution$latitude,pollution$pm25)
+with(pollution,plot(latitude,pm25))
+abline(h=12,lwd=2,lty=2)
+plot(pollution$latitude, pollution$pm25, col = pollution$region) # Plot colour changes with the number of categorical variables 
+abline(h=12,lwd=2,lty=2)
+par(mfrow = c(1, 2), mar = c(5, 4, 2, 1))
+west <- subset(pollution,region == "west")
+plot(west$latitude,west$pm25,main =  "West")
+plot(east$latitude,east$pm25,main =  "East")
+
+
