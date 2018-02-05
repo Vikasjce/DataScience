@@ -50,10 +50,46 @@ plot(east$latitude,east$pm25,main =  "East")
 with(faithful,plot(eruptions,waiting)) # Plot the data using scatter plot
 title(main = "Old Faithful Geyser data") # Title can be added later to the graph like this 
 dev.cur() # Gives the device where the graph is getting plotted
-pdf(file = "myplot.pdf")
+pdf(file = "myplot.pdf") # Opens the PDF device 
 with(faithful,plot(eruptions,waiting))
 title(main = "Old Faithful Geyser data")
-dev.off()
-dev.copy(png,file = "geyserplot.png")
-dev.off()
+dev.off() # Closes the PDF device
+dev.copy(png,file = "geyserplot.png") # Copies from one device to another
+dev.off() # Closed the device after the copy
 
+# Plotting Systems 
+
+## Base plotting system 
+with(cars,plot(speed,dist)) 
+text(mean(cars$speed),max(cars$dist),"SWIRL rules!") # Places the text at the mean of cars speed and max of cars distance 
+
+## Lattice Plotting System 
+head(state)
+table(state$region)
+xyplot(Life.Exp ~ Income | region,data = state,layout=c(4,1)) # Divides the plot on the third Categorical Variable 
+xyplot(Life.Exp ~ Income | region,data = state,layout=c(2,2))
+
+## ggplotting system 
+head(mpg)
+dim(mpg)
+table(mpg$model)
+qplot(displ,hwy,data = mpg) # Same as the dot 
+
+
+## Base plotting system in Detail
+# Histogram
+head(airquality)
+range(airquality$Ozone,na.rm = TRUE)
+hist(airquality$Ozone) # Histogram of Ozone distribution in the dataset
+# Box Plot
+table(airquality$Month)
+boxplot(Ozone~Month,data = airquality) # Box plot of Ozone on the categorical variable Month
+boxplot(Ozone~Month, airquality, xlab="Month", ylab="Ozone(ppb)",col.axis="blue",col.lab="red")
+title(main = "Ozone and Wind in New York City")
+#Scatter plot
+with(airquality,plot(Wind,Ozone))
+title(main = "Ozone and Wind in New York City")
+
+# Change the graph settings using Par
+length(par()) # Total of 72 settings using Par
+names(par()) # Gives the names of these settings 
