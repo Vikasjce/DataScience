@@ -65,6 +65,18 @@ text(mean(cars$speed),max(cars$dist),"SWIRL rules!") # Places the text at the me
 
 ## Lattice Plotting System 
 head(state)
+
+# GGPLOT using qplot
+qplot(displ,hwy,data = mpg) # Think plot puts in the scatter plot automatically
+qplot(displ, hwy, data = mpg, color = drv) # sets the Group on categorical variable 
+qplot(displ, hwy, data = mpg, color = drv, geom = c("point","smooth")) # Puts in the regression line shows the 95% confidence Interval
+qplot(y=hwy,data = mpg,color=drv) # Completely plots each value of the hwy on the graph from the first point to the end point as the data has it 
+qplot(drv,hwy,data = mpg,geom = "boxplot") # Box plot using a qplot 
+qplot(drv,hwy,data = mpg,geom = "boxplot", color=manufacturer) # box plot of hwy on drv categorical varible and classification again on Manufacturer
+qplot(hwy,data = mpg,fill=drv) # Histogram on data using hwy as the value and drv as the fill
+qplot(displ,hwy,data = mpg,facets = .~drv) #Scatter plot with a single row and 3 columns since there are 3 values in drv 
+qplot(hwy,data = mpg,facets = drv~.,binwidth=2) # Histogram with a categorical category of variables on DRV for hwy count
+
 table(state$region)
 xyplot(Life.Exp ~ Income | region,data = state,layout=c(4,1)) # Divides the plot on the third Categorical Variable 
 xyplot(Life.Exp ~ Income | region,data = state,layout=c(2,2))
