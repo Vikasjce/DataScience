@@ -111,3 +111,11 @@ plot(airquality$Wind,airquality$Ozone,main = "Ozone and Wind")
 plot(airquality$Solar.R, airquality$Ozone, main = "Ozone and Solar Radiation")
 plot(airquality$Temp, airquality$Ozone, main = "Ozone and Temperature")
 mtext("Ozone and Weather in New York City", outer = TRUE)
+
+## Lattice Plot 
+/** Need to do it once more ***/
+
+## Color Palettes 
+/** Need to do it once more ***/
+
+
